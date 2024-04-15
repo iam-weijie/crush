@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>😍</title>
+    <style>
+      body {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        background-color: #ffe6f2;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        font-size: 36px;
+        color: #ff80b3;
+        margin-top: 50px;
+      }
+
+      p {
+        font-size: 24px;
+        color: #ff80b3;
+        margin: 20px;
+      }
+
+      img {
+        width: 80%;
+        max-width: 400px;
+        margin: 20px auto;
+        display: block;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      button {
+        background-color: #ff80b3;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        outline: none;
+      }
+
+      button:hover {
+        background-color: #ff66a3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Hey Cutie!</h1>
+    <p>Can we hang out soon?</p>
+    <img
+      src="https://media.tenor.com/zGm5acSjHCIAAAAM/cat-begging.gif"
+      alt="Cute cat begging"
+    />
+    <div>
+      <button onclick="showResponse('YAYY')">YES BBY!</button>
+      <button onmouseover="moveButton()">NO</button>
+    </div>
+
+    <audio id="cupid_original" src="Cupid.mp3" autoplay></audio>
+    <audio id="cupid_remix" src="Cupid_remix.mp3" loop></audio>
+
+    <script>
+      function showResponse(response) {
+        // pause the first audio
+        var originalAudio = document.getElementById("cupid_original");
+        originalAudio.pause();
+
+        // play the second
+        var audio = document.getElementById("cupid_remix");
+        audio.play();
+
+        // show the response message
+        alert(response + " THANK U 😘❤️");
+      }
+
+      function moveButton() {
+        const button2 = document.querySelector("button:last-of-type");
+        button2.style.position = "absolute";
+        button2.style.left = Math.random() * 90 + "%";
+        button2.style.top = Math.random() * 80 + "%";
+      }
+    </script>
+  </body>
+</html>
