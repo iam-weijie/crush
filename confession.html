@@ -41,13 +41,21 @@
         padding: 15px 30px;
         font-size: 20px;
         border-radius: 25px;
-        cursor: pointer;
         transition: all 0.3s ease;
         outline: none;
       }
 
       button:hover {
         background-color: #ff66a3;
+      }
+
+      button2 #soundIcon {
+        width: 50px; /* Adjust the size as needed */
+        height: auto;
+        box-shadow: 0 0 0;
+        position: fixed;
+        right: 5%;
+        top: 5%;
       }
     </style>
   </head>
@@ -67,7 +75,22 @@
     <audio id="cupid_original" src="Cupid.mp3" autoplay></audio>
     <audio id="cupid_remix" src="Cupid_remix.mp3" loop></audio>
 
+    <button2 id="soundButton" onclick="toggleSound()">
+      <img id="soundIcon" src="sound.png" />
+    </button2>
+
     <script>
+      function toggleSound() {
+        var originalAudio = document.getElementById("cupid_original");
+        var remixAudio = document.getElementById("cupid_remix");
+
+        if (originalAudio.paused && remixAudio.paused) originalAudio.play();
+        else {
+          remixAudio.pause();
+          originalAudio.pause();
+        }
+      }
+
       function showResponse(response) {
         // pause the first audio
         var originalAudio = document.getElementById("cupid_original");
